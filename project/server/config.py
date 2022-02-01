@@ -1,6 +1,6 @@
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
-postgres_local_base = 'postgresql://postgres:123456@localhost:5432/'
+postgres_local_base = 'postgresql://postgres:123456@localhost/'
 database_name = 'diagnostic'
 
 
@@ -32,4 +32,4 @@ class ProductionConfig(BaseConfig):
     """Production configuration."""
     SECRET_KEY = 'diagnostic_secret'
     DEBUG = False
-    SQLALCHEMY_DATABASE_URI = 'sqlite:///diagnostic'
+    SQLALCHEMY_DATABASE_URI = 'postgresql://postgres:123456@localhost/diagnostic'
